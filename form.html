@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Формы</title>
+</head>
+<body>
+    <header id="header"></header>
+    <main>
+        <h1>Формы</h1>
+        <p>
+            Тег <code>&lt;form&gt;</code> добавляет на страницу форму, которую пользователь может заполнить. Например, ввести своё имя, фамилию или почту. Данные формы отправляются на сервер. Пример:
+        </p>
+        <xmp>
+            <form action="" method="get">
+                <p>
+                    <label for="name">Введите имя:</label>
+                    <input type="text" name="name" id="name" required>
+                </p>
+                <p>
+                    <label for="email">Введите email:</label>
+                    <input type="email" name="email" id="email" required>
+                </p>
+                <button type="submit">Отправить</button>
+            </form>
+        </xmp>
+        <hr><br>
+
+
+        <h2>Атрибуты форм</h2>
+        <h3>Базовые атрибуты (стартовый набор)</h3>
+        <p>
+            <strong><code>&lt;action&gt;</code></strong> — здесь указывается ссылка на скрипт, который обработает форму (полный или относительный путь). Если не указать атрибут <code>&lt;action&gt;</code>, то страница будет просто обновляться каждый раз, когда отправляется форма.
+        </p>
+        <p>
+            <strong><code>&lt;method&gt;</code></strong> — может определять, каким способом будут отправлены на сервер данные, которые ввёл пользователь.
+        </p> 
+        <p>Значения атрибута:</p>
+        <ul>
+            <li><code>get</code></li>
+            <li><code>post</code></li>
+            <li><code>dialog</code> — значение используется для создания модальных (всплывающих) окон. Но форма должна быть обернута в HTML тег <code>&lt;dialog&gt;</code>.</li>
+        </ul>
+        <p>
+            <strong><code>&lt;name&gt;</code></strong> — уникальное имя формы. Пользователь его не увидит, зато скрипты смогут найти нужную форму.
+        </p>
+        <hr><br>
+
+
+        <h3>Атрибут autocomplete</h3>
+        <p>
+            <code>&lt;autocomplete&gt;</code> — атрибут, при помощи которого форма заполняется в один клик — браузер подставит значения в соответствующие поля.
+        </p>
+        <p>Значения атрибута:</p>
+        <ul>
+            <li><code>on</code> — значение по умолчанию. Включает автозаполнение для этой формы.</li>
+            <li><code>off</code> — выключает автозаполнение.</li>
+            <li>
+                <code>autocomplete</code> помимо <code>on</code> и <code>off</code> имеет и более узконаправленные значения. Например, <code>autocomplete="tel"</code> и другие категории:
+            </li>
+            <ul>
+                <li>Авторизация</li>
+                <li>Формы имени</li>
+                <li>Данные банковской карты и деньги</li>
+                <li>Личные данные</li>
+                <li>Адрес</li>
+                <li>Телефон</li>
+                <li>Ссылки</li>
+            </ul>
+        </ul>
+        <fieldset>
+            <legend>Форма autocomplete</legend>
+                <!-- autocomplete определяет, будет ли форма помнить введенные в нее данные -->
+                <form action="">
+                    <div>
+                        <label for="name">Введите имя</label> <br>
+                        <input id="name" type="text" autocomplete="off">
+                    </div>
+                    <div>
+                        <!-- autocomplete включен в форме и здесь нет запрета - он сработает -->
+                        <label for="email">Электронная почта</label> <br>
+                        <input id="email" type="email">
+                    </div>
+                    <div>
+                        <label for="address-level1">Адрес</label> <br>
+                        <input type="text" name="address-level1" autocomplete="address-level1">
+                    </div>
+                    <div>
+                        <label for="tel">Телефон</label> <br>
+                        <input type="tel" name="tel" autocomplete="tel">
+                    </div>
+                    <br>
+                    <div><button type="submit">Отправить</button></div>
+                </form>
+        </fieldset>
+        <p>
+            <mark>
+                Кроме элемента <code>&lt;form&gt;</code>, атрибут autocomplete можно указать для любого поля, которое требует ввода данных — <code>&lt;input&gt;</code>, принимающий на вход текст или число, <code>&lt;select&gt;</code> или <code>&lt;textarea&gt;</code>.
+            </mark>
+        </p>
+        <hr><br>
+
+
+        <h3>Атрибут novalidate</h3>
+        <p>
+            Отключает валидацию формы. Зачем нам валидация формы браузером, когда у нас есть JavaScript?
+        </p>
+        <p>
+            Атрибут novalidate говорит браузеру не проверять поля и не препятствовать отправке формы, так как иногда подобное поведение бывает нежелательным. К примеру, форма проверяется при помощи JavaScript, и нужно избежать конфликтов с браузерной валидацией. В том числе, и убрать всплывающие подсказки, чтобы показать вместо них свои, кастомные.
+        </p>
+
+        <br>
+        <hr size="4px" color="red">
+        <br>
+        <hr size="4px" color="red">
+        <br>
+
+
+
+
+        <h2>Элементы форм</h2>
+        <h3>fieldset</h3>
+        <p>Объединяет элементы формы в группы.</p>
+        <p>   
+            Добавляет заголовок в <code>&lt;fieldset&gt;</code>, который по умолчанию оформляется браузером как текст, органично вписанный в рамку.
+        </p>
+        <form action="">
+            <fieldset>
+                <legend>Поле ввода</legend>
+                <input type="text" />
+                <input type="text" />
+            </fieldset>
+            <fieldset>
+                <legend>Поле опций</legend>
+                <select name="" id="">
+                    <option value="one">1</option>
+                    <option value="two">2</option>
+                    <option value="three">3</option>
+                    <option value="for">4</option>
+                    <option value="five">5</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Поле кнопок</legend>
+                <button type="submit">Отправить</button>
+                <button type="reset">Сброс</button>
+            </fieldset>
+        </form>
+        <hr> <br>
+
+
+        <h3>input</h3>
+        <p>
+            Тег <code>&lt;input&gt;</code> позволяет создавать интерактивные элементы на сайте — поле для ввода текста, кнопка, ползунок, переключатель и другие.
+        </p>
+        <p>
+            <code>&lt;input&gt;</code> — это контейнер для интерактивных элементов, с помощью которых пользователь может ввести данные, что-то выбрать, поставить галочку или нажать кнопку.
+        </p>
+        <p>
+            Если хочется, чтобы введённые или выбранные в <code>&lt;input&gt;</code> данные отправились на сервер, нужно поместить этот тег в <code>&lt;form&gt;</code> либо связать этот элемент с формой через атрибут <code>id</code>.
+        </p>
+       <fieldset>
+            <legend>Разметка input</legend>
+                <fieldset>
+                    <label for="text">Текстовый инпут:</label> <br>
+                    <input type="text" id="text">
+                </fieldset>
+                <br>
+                <fieldset>
+                    <!-- Если input заключить внутрь label, то отработка будет такая же, как с for и id. Кроме доступности скринридеров (которые читают текст, не проверено, но так сказал ИИ и блогер в ютубе) и могут быть проблемы с динамической генерацией формы (так сказал ИИ) -->
+                    <label>
+                        Другой текстовый инпут: 
+                        <br>
+                        <input type="text" />
+                    </label>
+                </fieldset>
+       </fieldset>
+        <p>
+            <mark>
+                Если input заключить внутрь label, то отработка будет такая же, как с for и id. Кроме доступности скринридеров (которые читают текст, не проверено, но так сказал ИИ и блогер в ютубе) и могут быть проблемы с динамической генерацией формы (так сказал ИИ).
+            </mark>
+        </p>
+        <hr>
+
+
+        <h4>Атрибуты input</h4>
+        <p>
+            К элементу можно применить все глобальные атрибуты. Подробнее о которых можно узнать <a href="https://doka.guide/html/global-attrs/">в доке</a>.
+        </p>
+        <hr><br>
+
+
+        <h4>Тип данных input</h4>
+        <h5>Типы для ввода данных разных форматов:</h5>
+        <form>
+            <div>
+                <label for="text">
+                    Поле для ввода текста в одну строку. Если попробовать вставить текст из нескольких абзацев, то они всё равно сложатся в одну строчку.
+                </label><br>
+                <input id="text" type="text">
+            </div>
+            <br>
+            <div>
+                <label for="number">
+                    Ввод числа.
+                </label><br>
+                <input id="number" type="number">
+            </div>
+            <br>
+            <div>
+                <label for="password">
+                    Ввод пароля. По мере ввода символы будут меняться на звёздочки ***. Можно задать минимальное и максимальное количество символов с помощью атрибутов <code>minlength</code> и <code>maxlength</code>.
+                </label><br>
+                <input type="password" id="password">
+            </div>
+            <br>
+            <div>
+                <label for="email">
+                    Поле для ввода имейла. Браузер проверит, есть ли в нём знак «@» и домен.
+                </label><br>
+                <input type="email" id="email">
+            </div>
+            <br>
+            <div>
+                <label for="search">
+                    Поле для поиска.
+                </label><br>
+                <input type="search" id="search">
+            </div>
+            <br>
+            <div>
+                <label for="tel">
+                    Поле для ввода номера телефона. У пользователя на мобильном устройстве отобразится клавиатура, содержащая лишь цифры и специальные символы, нужные для корректного ввода номера телефона.
+                </label><br>
+                <input type="tel" id="tel">
+            </div>
+            <br>
+            <div>
+                <label for="url">
+                    Поле для ввода URL-адреса.
+                </label><br>
+                <input type="url" id="url">
+            </div>
+        </form>
+        <hr>
+
+        <h5>Типы для ввода дат:</h5>
+        <form action="">
+            <div>
+                <label>
+                    Ввод даты без времени: год, месяц и дата. 
+                    <br>
+                    <input type="date" />
+                </label>
+            </div>
+            <br>
+            <div>
+                <label>
+                    Ввод даты и времени в текущем часовом поясе.
+                    <br>
+                    <input type="datetime-local" />
+                </label>
+            </div>
+            <br>
+            <div>
+                <label>
+                    Ввод даты и времени без указания часового пояса.
+                    <br>
+                    <input type="datetime" />
+                </label>
+            </div>
+            <br>
+            <div>
+                <label>
+                    Ввод месяца и года, без указания часового пояса.
+                    <br>
+                    <input type="month" />
+                </label>
+            </div>
+            <br>
+            <div>
+                <label>
+                    Ввод номера недели.
+                    <br>
+                    <input type="week" />
+                </label>
+            </div>
+            <br>
+            <div>
+                <label>
+                    Ввод времени без указания часового пояса.
+                    <br>
+                    <input type="time" />
+                </label>
+            </div>
+        </form>
+        <hr>
+
+        <h5>Типы для выбора</h5>
+        <form>
+            <div>
+                <label for="checkbox">
+                    Флажки, или чекбокс, с несколькими вариантами на выбор.
+                </label><br>
+                <input type="checkbox" id="checkbox">
+                <input type="checkbox" id="checkbox">
+                <input type="checkbox" id="checkbox">
+            </div>
+            <br>
+            <div>
+                <label for="radio">
+                    Круглая кнопка-переключатель для выбора одного из нескольких вариантов. Чтобы это работало, нужно добавить атрибут <code>name</code>.
+                </label><br>
+                <input type="radio" id="radio" name="radio">
+                <input type="radio" id="radio" name="radio">
+                <input type="radio" id="radio" name="radio">
+            </div>
+            <br>
+            <div>
+                <label for="range">
+                    Ползунок для выбора чисел из заданного диапазона.
+                </label><br>
+                <input type="range" id="range">
+            </div>
+            <br>
+            <div>
+                <label for="color">
+                    Виджет для выбора цвета. Иногда его называют колорпикер (от английского colorpicker).
+                </label><br>
+                <input type="color" id="color">
+            </div>
+            <br>
+            <div>
+                <label for="file">
+                    Выбор файла для отправки.
+                </label><br>
+                <input type="file" id="file">
+            </div>
+            <br>
+            <div>
+                <label for="hidden">
+                    <span>Скрытое поле</span>
+                    <span>Пользователь его не видит на странице, но оно есть. Подобно данным из <code>&lt;head&gt;</code>, используется для визуального скрытия служебной информации, чтобы не отвлекать пользователя ненужными ему данными, например, идентификатор товара, номер заказа, токен безопасности и т.д.</span>
+                </label><br>
+                <input type="hidden" name="order_id" value="12345">
+            </div>
+        </form>
+        <hr><br>
+
+
+        <h3>select и option</h3>
+        <p>
+            Элемент <code>&lt;select&gt;</code> используется, когда нужно показать выпадающий список.
+        </p>
+        <p>
+            Тег <code>&lt;option&gt;</code>используется в интерактивных элементах управления для вёрстки одиночного пункта списка.
+        </p>
+        <p>
+            Задать каждому тегу <code>&lt;option&gt;</code> атрибут value. Если этот атрибут не задан, то его значение будет равно текстовому содержимому тега <code>&lt;option&gt;</code>.
+        </p>
+        <p>
+            selected атрибут указывает на опцию по умолчанию
+        </p>
+        <p>
+            Внутри тега <code>&lt;select&gt;</code> могут использоваться только теги <code>&lt;option&gt;</code>, <code>&lt;optgroup&gt;</code> и <code>&lt;hr&gt;</code>.
+        </p>
+        <form>
+            <label for="city-select">
+                Атрибут selected
+            </label><br>
+            <select name="city" id="city-select">
+                <option value="">-- Выберите город --</option>
+                <option value="petersburg">Санкт-Петербург</option>
+                <option value="samara" selected>Самара</option>
+                <option value="perm">Пермь</option>
+                <option value="novosibirsk">Новосибирск</option>
+            </select>
+        </form>
+        <br>
+        <form>
+            <label for="city-select">
+                Атрибут disabled
+            </label><br>
+            <select name="city" id="city-select" disabled>
+                <option value="">-- Выберите город --</option>
+                <option value="petersburg">Санкт-Петербург</option>
+                <option value="samara" selected>Самара</option>
+                <option value="perm">Пермь</option>
+                <option value="novosibirsk">Новосибирск</option>
+            </select>
+        </form>
+        <br>
+        <form>
+            <label for="city-select">
+                Атрибут multiple
+            </label><br>
+            <select name="city" id="city-select" multiple>
+                <option value="">-- Выберите город --</option>
+                <option value="petersburg">Санкт-Петербург</option>
+                <option value="samara" selected>Самара</option>
+                <option value="perm">Пермь</option>
+                <option value="novosibirsk">Новосибирск</option>
+            </select>
+        </form>
+        <br>
+        <form>
+            <label for="city-select">
+                Атрибут size="6"
+            </label><br>
+            <select name="city" id="city-select" size="6">
+                <option value="">-- Выберите город --</option>
+                <option value="petersburg">Санкт-Петербург</option>
+                <option value="samara" selected>Самара</option>
+                <option value="perm">Пермь</option>
+                <option value="novosibirsk">Новосибирск</option>
+            </select>
+        </form>
+        <br>
+        <!-- Чтобы данные формы были отправлены на сервер, нужно заполнить name в select и value в option -->
+        <div>
+            <select name="" id=""><br>
+                <option value="one">Выпадающий пункт</option>
+                <option value="two">Выпадающий пункт</option>
+                <option value="three">Выпадающий пункт</option>
+                <option value="four">Выпадающий пункт</option>
+                <option value="five">Выпадающий пункт</option>
+            </select>
+        </div>   
+        <hr>
+        
+        
+        <h4>optgroup</h4>
+        <p> 
+            Тег <code>&lt;optgroup&gt;</code> позволяет группировать опции внутри элемента <code>&lt;select&gt;</code>. Внутри тега <code>&lt;optgroup&gt;</code> стандартно используется один или несколько тегов <code>&lt;option&gt;</code>.
+        </p>
+        <select>
+            <optgroup label="Первая группа" disabled>
+              <option>Ангулоя одноцветковая</option>
+              <option>Пассифлора инкарнатная</option>
+            </optgroup>
+            <optgroup label="Вторая группа"></optgroup>
+            <option>Ангулоя одноцветковая</option>
+            <option>Пассифлора инкарнатная</option>
+        </select>
+        <hr><br>
+        
+
+        <h3>datalist</h3>
+        <p>Пользователь может как ввести данные, так и выбрать из опциональных подсказок</p>
+        <fieldset>
+            <legend>Ваш браузер:</legend>
+            <form>
+                <input type="text" list="browsers" id="my-browser" name="my-browser">
+                <datalist id="browsers">
+                    <option value="Chrome">
+                    <option value="Firefox">
+                    <option value="Yandex Browser">
+                    <option value="Opera">
+                    <option value="Safari">
+                    <option value="Microsoft Edge">
+                </datalist>
+            </form>
+        </fieldset>
+        <p>Перед использованием элемент <code>&lt;datalist&gt;</code> нужно связать с элементом <code>&lt;input&gt;</code> через атрибут list.</p>
+        <p>Элемент <code>&lt;datalist&gt;</code> не сработает, если между элементами <code>&lt;input&gt;</code> и <code>&lt;datalist&gt;</code> будет любой другой элемент с id. Даже если это сам <code>&lt;input&gt;</code> со значением, которое равно значению атрибута list элемента <code>&lt;input&gt;</code>:</p>
+        <fieldset>
+            <legend>Выберите фрукт из неработающего списка:</legend>
+            <form>
+                <input list="fruitsList" id="fruits" name="fruits">
+                <div id="fruitsList">
+                    <datalist id="fruitsList">
+                        <option value="Банан">
+                        <option value="Арбуз">
+                        <option value="Киви">
+                    </datalist>
+                </div>
+            </form>
+        </fieldset>
+        <p>
+            Элемент <code>&lt;input&gt;</code>  со значением date, month, week или time атрибута type — это интерактивный элемент для выбора определённой даты, месяца, недели или времени.
+        </p>     
+        <hr>
+
+    
+        <h4>range</h4>
+        <p>
+            Ползунок (range) - это элемент управления вводом данных, который позволяет пользователю выбирать числовое значение из заданного диапазона. Он представляет собой горизонтальную линию со слайдером, который можно перемещать для выбора значения.
+    
+        </p>
+        <p>Основные характеристики:</p>
+        <ul>
+            <li>Позволяет выбрать только одно значение из указанного диапазона</li>
+            <li>Имеет минимальное и максимальное значение</li>
+            <li>Можно установить шаг изменения значений</li>
+            <li>Часто используется для настройки параметров, где точное значение менее важно, чем его приблизительная величина</li>
+        </ul>
+        <p>
+            Применяется в различных сценариях: регулировка громкости, настройка яркости, фильтры цен, выбор рейтинга и других случаях, когда нужно быстро задать приблизительное значение в определенных пределах.
+        </p>
+        <form>
+            <label for="rangeInput">Укажите число:</label><br>
+            <input type="range" list="rangeList" id="rangeInput">
+            <datalist id="rangeList">
+                <option value="0">
+                <option value="25">
+                <option value="50">
+                <option value="75">
+                <option value="100">
+            </datalist>
+          </form>
+        <p>
+            За отображение числового значения под ползунком в демке отвечает элемент <code>&lt;output&gt;</code>. Но значения из <code>&lt;datalist&gt;</code> сами по себе не отображаются визуально на странице. Они служат только как "подсказки" для элемента <code>&lt;input type="range"&gt;</code>, для отображения нужно использовать CSS.
+        </p>
+        <hr><br>
+
+
+        <h3>textarea</h3>
+        <p>Тег <code>&lt;textarea&gt;</code> используется для создания многострочного поля ввода с простым текстом. Панели стилизации текста, как в Ворде, являются дополнительными надстройками с использованием JavaScript.</p>
+        <p><strong>cols</strong> - Задаёт ширину поля ввода в символах. сли не задан, то по умолчанию берётся как 20.</p>
+        <p><strong>rows</strong> - Задаёт высоту поля ввода в строках. Если не задан, то по умолчанию высота задаётся равной двум строкам.</p>
+        <form>
+            <textarea name="" id="" cols="60" rows="5"></textarea><br>
+            <button type="submit">Отправить</button>
+        </form>
+        <hr><br>
+
+        
+        <h3> &lt;button&gt; VS &lt;input с типом кнопок&gt;</h3>
+        <br>
+        <h4>1. &lt;button type="button"&gt; vs &lt;input type="button"&gt;</h4>
+        <p><strong>&lt;button type="button"&gt;Отправить&lt;/button&gt;:</strong></p>
+        <ul>
+            <li>Эта кнопка не будет отправлять форму, если не назначить ей обработчик события JavaScript.</li>
+            <li>Может содержать текст, изображения или другие HTML-элементы внутри.</li>
+        </ul>
+        <fieldset>
+            <fieldset>
+                <legend>Код:</legend>
+                <xmp><button type="button">Отправить</button></xmp>
+            </fieldset>
+            <fieldset>
+                <legend>Отработка кода:</legend>
+                <button type="button">Отправить</button>
+            </fieldset>
+        </fieldset>
+        <p><strong>&lt;input type="button"&gt;:</strong></p>
+        <ul>
+            <li>Эта кнопка не будет отправлять форму, если не назначить ей обработчик события JavaScript.</li>
+            <li>Не может содержать вложенные элементы, только текст через атрибут <code>value</code>.</li>
+        </ul>
+        <fieldset>
+            <fieldset>
+                <legend>Код:</legend>
+                <xmp><input type="button" value="Отправить"></xmp>
+            </fieldset>
+            <fieldset>
+                <legend>Отработка кода:</legend>
+                <input type="button" value="Отправить">
+            </fieldset>
+        </fieldset>
+        <hr><br>
+    
+        <h4>2. &lt;button type="submit"&gt; vs &lt;input type="submit"&gt;</h4>
+        <p><strong>&lt;button type="submit"&gt;Отправить&lt;/button&gt;:</strong></p>
+        <ul>
+            <li>Это кнопка, которая отправляет форму по умолчанию.</li>
+            <li>Может содержать текст, изображения или другие HTML-элементы внутри.</li>
+        </ul>
+        <fieldset>
+            <fieldset>
+                <legend>Код:</legend>
+                <xmp><button type="submit">Отправить</button></xmp>
+            </fieldset>
+            <fieldset>
+                <legend>Отработка кода:</legend>
+                <input type="button" value="Отправить">
+            </fieldset>
+        </fieldset>
+        <p><strong>&lt;input type="submit"&gt;:</strong></p>
+        <ul>
+            <li>Это кнопка, которая также отправляет форму по умолчанию.</li>
+            <li>Не может содержать вложенные элементы, только текст через атрибут <code>value</code>.</li>
+        </ul>
+        <fieldset>
+            <fieldset>
+                <legend>Код:</legend>
+                <xmp><input type="submit" value="Отправить"></xmp>
+            </fieldset>
+            <fieldset>
+                <legend>Отработка кода:</legend>
+                <input type="submit" value="Отправить">
+            </fieldset>
+        </fieldset>
+        <hr><br>
+
+        <h4>3. &lt;button type="reset"&gt; vs &lt;input type="button"&gt;</h4>
+        <p><strong>&lt;button type="reset"&gt;:</strong></p>
+        <ul>
+            <li>Это кнопка, которая сбрасывает значения всех полей формы к их начальным значениям.</li>
+            <li>Может содержать текст, изображения или другие HTML-элементы внутри.</li>
+        </ul>
+        <fieldset>
+            <fieldset>
+                <legend>Код:</legend>
+                <pre style="padding: 0px; margin: 0;">
+&lt;button style="border: 0; border-radius: 50%; cursor: pointer;" type="reset"&gt;
+&lt;img style="width: 50px;" src="reset.jpg" alt="Кнопка сброса"&gt;
+&lt;/button&gt;
+            </fieldset>
+            <fieldset>
+                <legend>Отработка кода:</legend>
+                <button style="border: 0; border-radius: 50%; cursor: pointer;" type="reset">
+                    <img style="width: 50px;" src="reset.jpg" alt="Кнопка сброса">
+                </button>
+            </fieldset>
+        </fieldset>
+        <p><strong>&lt;input type="reset"&gt;:</strong></p>
+        <ul>
+        <li>Это кнопка, которая также сбрасывает значения всех полей формы к их начальным значениям.</li>
+        <li>Не может содержать вложенные элементы, только текст через атрибут <code>value</code>.</li>
+        </ul>
+        <fieldset>
+            <fieldset>
+                <legend>Код:</legend>
+                <xmp><input type="button" value="Кнопка"></xmp>
+            </fieldset>
+            <fieldset>
+                <legend>Отработка кода:</legend>
+                <input type="button" value="Кнопка">
+            </fieldset>
+        </fieldset>
+        <hr><br>
+    </main>
+    <footer id="footer"></footer>
+    <script src="js/pageComponents.js"></script>
+</body>
+</html>

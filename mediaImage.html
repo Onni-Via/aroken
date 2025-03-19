@@ -3,9 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Изображение</title>
 </head>
 <body>
+    <haader id="header"></haader>
+    <main>
+        <img src="https://picsum.photos/seed/picsum/450/300" alt="">
+        <picture>
+            <!-- Контейнер <picture> выбирает изображение в зависимости от условий, сначала пишимым самый малый -->
+            <source media="(max-width: 500px)" srcset="https://picsum.photos/id/29/200/"> 
+            <!-- Для экранов ≤ 500px загружается маленькое изображение (200px) -->
+            <source media="(max-width: 700px)" srcset="https://picsum.photos/id/29/400/"> 
+            <!-- Для экранов > 500px и ≤ 700px загружается среднее изображение (400px) -->
+            <img src="https://picsum.photos/id/29/700/" alt="Опиисание"> 
+            <!-- Если ни одно условие не подходит, загружается резервное изображение (700px) -->
+        </picture>
+        <figure>
+            <img src="https://picsum.photos/seed/picsum/450/300" alt="Опиисание">
+            <figcaption>
+                Семантический тег для конкретного описания изображения. Так ПС поймут что текст описывает это изображение это лучше чем просто тег параграфа.
+            </figcaption>
+        </figure>
+    </main>
+    <footer id="footer"></footer>
     <script src="js/pageComponents.js"></script>
 </body>
 </html>
