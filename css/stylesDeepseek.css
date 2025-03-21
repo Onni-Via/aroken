@@ -1,0 +1,82 @@
+/* 1. Универсальный селектор (*) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Селектор по тегу (div) */
+div {
+  border: 2px solid green;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+/* 3. Селектор по классу (.class) */
+.example-class {
+  background-color: #f0f0f0;
+}
+
+/* 4. Селектор по ID (#id) */
+#unique-element {
+  background-color: #d0f0d0;
+}
+
+/* 5. Дочерний комбинатор (селектор1 > селектор2) */
+.parent > div {
+  background-color: #f0d0d0;
+}
+
+/* 6. Селектор потомков (селектор1 селектор2) */
+.ancestor div {
+  background-color: #d0d0f0;
+}
+
+/* 7. Соседний комбинатор (селектор1 + селектор2) */
+.sibling + div {
+  background-color: #f0f0d0;
+}
+
+/* 8. Общий комбинатор (селектор1 ~ селектор2) */
+.general-sibling ~ div {
+  background-color: #d0f0f0;
+}
+
+/* 9. Псевдо-класс :hover */
+.hover-example:hover {
+  background-color: #ffcc00;
+}
+
+/* 10. Псевдо-класс :nth-child(n) */
+ul li:nth-child(2) {
+  background-color: #ccffcc;
+}
+
+/* 11. Псевдо-класс :first-child */
+ul li:first-child {
+  background-color: #ffcccc;
+}
+
+/* 12. Псевдо-класс :last-child */
+ul li:last-child {
+  background-color: #ccccff;
+}
+
+/* 13. Псевдо-класс :not(селектор) */
+div:not(.not-example) {
+  background-color: #ffccff;
+}
+
+/* 14. Псевдо-элемент ::before */
+.before-example::before {
+  content: "Перед текстом: ";
+  color: #00cc00;
+  font-weight: bold;
+}
+
+/* 15. Псевдо-элемент ::after */
+.after-example::after {
+  content: " :После текста";
+  color: #cc0000;
+  font-weight: bold;
+}

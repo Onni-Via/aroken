@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Специфичность</title>
+    <link rel="stylesheet" href="css/specificity.css">
+</head>
+<body>
+    <header id="header"></header>
+    <main>
+        <h1>Специфичность</h1>
+        <p>Специфичность это такой набор правил и весов по которым определяется какое свойство важнее</p>
+        <p>У свойств есть вес который может еще и суммироваться. Например div.class даст 11.</p>
+        <table>
+            <tr>
+                <th>!important</th>
+                <th>1000</th>
+                <th>100</th>
+                <th>10</th>
+                <th>1</th>
+            </tr>
+            <tr>
+                <td>Абсолютный вес</td>
+                <td>inline style</td>
+                <td>ID</td>
+                <td class = "td1">class</td>
+                <td class = "td2">element</td>
+            </tr>
+            <tr>
+                <td colspan="3"></td>
+                <td>attribute</td>
+                <td>psevdo-element</td>
+            </tr>
+            <tr>
+                <td colspan="3"></td>
+                <td>psevdo-class</td>
+                <td></td>
+            </tr>
+        </table>
+    </main>
+    <footer id="footer"></footer>
+    <script src="js/pageComponents.js"></script> 
+</body>
+</html>

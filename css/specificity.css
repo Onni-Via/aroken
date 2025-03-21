@@ -1,0 +1,23 @@
+h1 {
+    color: aliceblue;
+}
+
+h1 {
+    color:antiquewhite;
+}
+
+h1 {
+    color:blanchedalmond;
+}
+
+[class] { 
+    color: blue;
+}
+
+.td1 {
+    color: aquamarine;
+}
+
+[id] {
+    color: darkolivegreen !important;
+}
