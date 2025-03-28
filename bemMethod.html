@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>БЭМ методология</title>
+        <style>
+            /* Стили для элемента user-card__image */
+            .user-card__image {
+                width: 100px;
+                height: 100px;
+                background-color: #333;
+                border-radius: 50%;
+                overflow: hidden; /* Обрезка изображения по границам */
+            }
+            .user-card__image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /* Сохранение пропорций изображения */
+            }
+
+            .user-card__desc--color-green {
+                color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <header id="header">
+            <!-- Заголовок страницы -->
+        </header>
+        <main>
+            <p>
+                Методология включает в себя: блок, элемент, модификатор. Отсюда
+                и название БЭМ.
+            </p>
+            <div class="user-card">
+                <div class="user-card__image">
+                    <img src="/media/ava.jpg" alt="Аватар пользователя" />
+                </div>
+                <div class="user-card__nick-name">
+                    <span>Goscha</span>
+                </div>
+                <div class="user-card__desc user-card__desc--color-green">
+                    <p>
+                        Далеко-далеко за словесными горами, в стране гласных и
+                        согласных живут рыбные тексты.
+                    </p>
+                </div>
+            </div>
+
+            <div class="great-block">
+                <div class="great-block__content">
+                    <div class="great-block__title"></div>
+                    <div class="great-block__buttom"></div>
+                </div>
+                <div class="great-block__video"></div>
+            </div>
+
+            <div class="line">
+                <div class="line__col">
+                    <div class="line__title"></div>
+                    <div class="line__text"></div>
+                </div>
+                <div class="line__col">
+                    <div class="line__title"></div>
+                    <div class="line__text"></div>
+                </div>
+                <div class="line__col">
+                    <div class="line__title"></div>
+                    <div class="line__text"></div>
+                </div>
+                <div class="line__col">
+                    <div class="line__title"></div>
+                    <div class="line__text"></div>
+                </div>
+            </div>
+
+            <div class="abaut">
+                <div class="abaut__row">
+                    <div class="abaut__content">
+                        <div class="abaut__title"></div>
+                        <div class="abaut__button"></div>
+                    </div>
+                    <div class="abaut_video"></div>
+                </div>
+                <div class="abaut__row"></div>
+            </div>
+
+
+
+
+            <div class="main-screen">
+                <div class="main-screen__content">
+                    <div class="main-screen__title"></div>
+                    <div class="main-screen__desc"></div>
+                    <div class="main-screen__buttom"></div>
+                </div>
+                <div class="main-screen__feedback-wheel"></div>
+            </div>
+            <div class="line">
+                <div class="line__block"></div>
+                <div class="line__block"></div>
+                <div class="line__block"></div>
+            </div>
+            <div class="cp-window">
+                <div class="cp-window__media"></div>
+                <div class="cp-window__content">
+                    <div class="cp-window__title"></div>
+                    <div class="cp-window__desc"></div>
+                    <div class="cp-window__achievement">
+                        <div class="cp-window__col">
+                            <div class="cp-window__title"></div>
+                            <div class="cp-window__desc"></div>
+                        </div>
+                        <div class="cp-window__col">
+                            <div class="cp-window__title"></div>
+                            <div class="cp-window__desc"></div>
+                        </div>
+                        <div class="cp-window__col">
+                            <div class="cp-window__title"></div>
+                            <div class="cp-window__desc"></div>
+                        </div>
+                        <div class="cp-window__col">
+                            <div class="cp-window__title"></div>
+                            <div class="cp-window__desc"></div>
+                        </div>
+                        <div class="cp-window__col">
+                            <div class="cp-window__title"></div>
+                            <div class="cp-window__desc"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-media">
+                <div class="info-media__title"></div>
+                <div class="info-media__video"></div>
+                <div class="info-media__buttom"></div>
+            </div>
+
+            <div class="info-graph">
+                <div class="info-graph__title"></div>
+                <div class="info-graph__desc"></div>
+                <div class="info-graph__graph-desc">
+                    <div class="info-graph__accordance">
+                        <div class="info-graph__title"></div>
+                        <div class="info-graph__desc"></div>
+                        <div class="info-graph__title"></div>
+                        <div class="info-graph__desc"></div>
+                        <div class="info-graph__title"></div>
+                        <div class="info-graph__desc"></div>
+                    </div>
+                </div>
+                <div class="info-graph__graph"></div>
+            </div>
+        </main>
+        <footer id="footer">
+            <!-- Подвал страницы -->
+        </footer>
+        <script src="js/pageComponents.js"></script>
+    </body>
+</html>

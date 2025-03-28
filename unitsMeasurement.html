@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="css/reset.css"> -->
+    <link rel="stylesheet" href="css/unitsMeasurement.css">
+</head>
+<body>
+    <header id="header"></header>
+    <main>
+        <h1>Еденицы измерения</h1>
+        <h2>Абсолютные</h2>
+        <h3>PX</h3>
+        <h2>Относительные</h2>
+
+        <h3>EM</h3>
+        <p>
+            EM — это относительная единица, которая зависит от размера шрифта родительского элемента. 
+            <strong>Как это работает:</strong>
+            <ul>
+                <li>Когда вы задаете размер в EM, браузер сначала смотрит на CSS-свойство <code>font-size</code> родительского элемента.</li>
+                <li>Затем он умножает значение EM на размер шрифта родителя.</li>
+                <li>Например, если у родительского элемента <code>font-size: 16px;</code>, то:
+                    <ul>
+                        <li>1em = 16px (1 * 16px)</li>
+                        <li>2em = 32px (2 * 16px)</li>
+                    </ul>
+                </li>
+                <li>Если у дочернего элемента есть свой <code>font-size</code>, то EM будет зависеть от него самого.</li>
+            </ul>
+        </p>
+        <p>
+            <strong>Дополнительно:</strong>
+            <ul>
+                <li><strong>Расшифровка:</strong> "em" происходит от английского слова "M", то есть буквы "М".</li>
+                <li><strong>Перевод:</strong> "Эм".</li>
+                <li><strong>Смысл:</strong> Исторически связано с шириной заглавной буквы "M" в используемом шрифте. Сейчас EM — это относительная единица, зависящая от размера шрифта родителя или самого элемента.</li>
+            </ul>
+        </p>
+    
+        <h3>REM</h3>
+        <p>
+            REM — это относительная единица, которая зависит от размера шрифта корневого элемента (<code>html</code>). 
+            <strong>Как это работает:</strong>
+            <ul>
+                <li>Браузер всегда смотрит на CSS-свойство <code>font-size</code> элемента <code>html</code>.</li>
+                <li>Затем он умножает значение REM на размер шрифта корневого элемента.</li>
+                <li>Например, если у <code>html</code> установлен <code>font-size: 16px;</code>, то:
+                    <ul>
+                        <li>1rem = 16px (1 * 16px)</li>
+                        <li>2rem = 32px (2 * 16px)</li>
+                    </ul>
+                </li>
+                <li>REM удобен тем, что он не зависит от вложенных элементов — всегда берется корневой размер шрифта.</li>
+            </ul>
+        </p>
+        <p>
+            <strong>Дополнительно:</strong>
+            <ul>
+                <li><strong>Расшифровка:</strong> "Root EM" (корневой EM).</li>
+                <li><strong>Перевод:</strong> "Корневой Эм".</li>
+                <li><strong>Смысл:</strong> REM всегда привязан к размеру шрифта корневого элемента (<code>html</code>), что делает его более стабильным и предсказуемым по сравнению с EM.</li>
+            </ul>
+        </p>
+    
+        <h3>%</h3>
+        <p>
+            % — это процентное соотношение относительно размера родительского элемента. 
+            <strong>Как это работает:</strong>
+            <ul>
+                <li>Браузер сначала смотрит на CSS-свойство, к которому применяется % (например, <code>width</code>, <code>height</code>, <code>padding</code>).</li>
+                <li>Затем он вычисляет значение, исходя из размера родительского элемента.</li>
+                <li>Например, если у родительского блока <code>width: 500px;</code>, то:
+                    <ul>
+                        <li>50% = 250px (50% от 500px)</li>
+                        <li>25% = 125px (25% от 500px)</li>
+                    </ul>
+                </li>
+                <li>Если у родителя нет явно заданного размера, браузер использует размер по умолчанию или контекст документа.</li>
+            </ul>
+        </p>
+        <p>
+            <strong>Дополнительно:</strong>
+            <ul>
+                <li><strong>Расшифровка:</strong> "Percentage" (процент).</li>
+                <li><strong>Перевод:</strong> "Процент".</li>
+                <li><strong>Смысл:</strong> Проценты указывают долю от какого-либо значения родительского элемента. Это универсальный инструмент для создания адаптивных макетов.</li>
+            </ul>
+        </p>
+    
+        <h3>VH и VW</h3>
+        <p>
+            VH и VW — это единицы, которые зависят от размеров видимой области браузера (viewport). 
+            <strong>Как это работает:</strong>
+            <ul>
+                <li><code>1vh</code> = 1% от высоты viewport.</li>
+                <li><code>1vw</code> = 1% от ширины viewport.</li>
+                <li>Например, если высота viewport = 1000px, а ширина = 1200px, то:
+                    <ul>
+                        <li>1vh = 10px (1% от 1000px)</li>
+                        <li>50vh = 500px (50% от 1000px)</li>
+                        <li>1vw = 12px (1% от 1200px)</li>
+                        <li>50vw = 600px (50% от 1200px)</li>
+                    </ul>
+                </li>
+                <li>Viewport — это видимая область страницы в браузере. Если вы измените размер окна браузера, значения VH и VW автоматически пересчитаются.</li>
+            </ul>
+        </p>
+        <p>
+            <strong>Дополнительно:</strong>
+            <ul>
+                <li><strong>Расшифровка:</strong> "Viewport Height" (VH) и "Viewport Width" (VW).</li>
+                <li><strong>Перевод:</strong> "Высота экрана" и "Ширина экрана".</li>
+                <li><strong>Смысл:</strong> Эти единицы позволяют создавать элементы, которые занимают определённую часть экрана пользователя. Они особенно полезны для полноэкранных дизайнов.</li>
+            </ul>
+        </p>
+    
+        <h3>VMIN и VMAX</h3>
+        <p>
+            VMIN и VMAX — это единицы, которые зависят от меньшего или большего значения между шириной и высотой viewport. 
+            <strong>Как это работает:</strong>
+            <ul>
+                <li><code>1vmin</code> = 1% от меньшего значения между шириной и высотой viewport.</li>
+                <li><code>1vmax</code> = 1% от большего значения между шириной и высотой viewport.</li>
+                <li>Например, если ширина viewport = 1200px, а высота = 800px, то:
+                    <ul>
+                        <li>1vmin = 8px (1% от 800px, так как высота меньше)</li>
+                        <li>1vmax = 12px (1% от 1200px, так как ширина больше)</li>
+                        <li>50vmin = 400px (50% от 800px)</li>
+                        <li>50vmax = 600px (50% от 1200px)</li>
+                    </ul>
+                </li>
+                <li>Эти единицы полезны, когда нужно адаптировать элемент под экран, учитывая его пропорции.</li>
+            </ul>
+        </p>
+        <p>
+            <strong>Дополнительно:</strong>
+            <ul>
+                <li><strong>Расшифровка:</strong> "Viewport Minimum" (VMIN) и "Viewport Maximum" (VMAX).</li>
+                <li><strong>Перевод:</strong> "Минимальное значение экрана" и "Максимальное значение экрана".</li>
+                <li><strong>Смысл:</strong> Эти единицы учитывают пропорции экрана, что особенно полезно для устройств с разными соотношениями сторон (например, смартфоны, планшеты, мониторы).</li>
+            </ul>
+        </p>
+        <hr class="line">
+        <div class="em">
+            <p class="em__bigText1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima, magni?</p>
+            <p class="em__bigText2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima, magni?</p>
+            <div class="em__square"></div>
+        </div>
+        <hr class="line">
+        <div class="em2">
+            <div class="em2__child">
+                <p class="em2__bigText1">2Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima, magni?</p>
+            </div>            
+            <div class="em2__child">2Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima, magni?</div>
+        </div>
+        <hr class="line">
+        <div class="em3">Lorem, ipsum.
+            <div class="em3">Lorem, ipsum.
+                <div class="em3">Lorem, ipsum.
+                    <div class="em3">Lorem, ipsum.
+                        <div class="em3">Lorem, ipsum.
+                            <div class="em3">Lorem, ipsum.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="line">
+        <div class="rem">Lorem, ipsum.
+            <div class="rem">Lorem, ipsum.
+                <div class="rem">Lorem, ipsum.
+                    <div class="rem">Lorem, ipsum.
+                        <div class="rem">Lorem, ipsum.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="line">
+        <div class="parent-square">
+            <div class="parent-square__child">Lorem, ipsum.</div>
+        </div>
+        <hr class="line">
+        <div class="procent">Lorem, ipsum.
+            <div class="procent">Lorem, ipsum.
+                <div class="procent">Lorem, ipsum.
+                    <div class="procent">Lorem, ipsum.
+                        <div class="procent">Lorem, ipsum.
+                            <div class="procent">Lorem, ipsum.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="line">
+        <div class="procent">Lorem, ipsum.
+            <div class="procent">Lorem, ipsum.
+                <div class="procent">Lorem, ipsum.
+                    <div class="procent">Lorem, ipsum.
+                        <div class="procent">Lorem, ipsum.
+                            <div class="procent">Lorem, ipsum.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="line">
+        <div class="vhw">
+            <p class="vhw__bigText1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima, magni?</p>
+            <p class="vhw__bigText2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima, magni?</p>
+            <div class="vhw__square"></div>
+        </div>
+        <hr class="line">
+        <div class="vhwminmax">
+            <p class="vhwminmax__bigText1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima, magni?</p>
+            <p class="vhwminmax__bigText2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima, magni?</p>
+            <div class="vhwminmax__square"></div>
+        </div>
+    </main>
+    <footer id="footer"></footer>
+    <script src="js/pageComponents.js"></script> 
+</body>
+</html>

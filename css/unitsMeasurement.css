@@ -1,0 +1,123 @@
+.line {
+    height: 3px; /* Высота линии */
+    width: 100%; /* Ширина линии (во всю ширину контейнера) */
+    background-color: rgb(172, 141, 84); /* Цвет фона линии */
+    margin: 20px 0; /* Отступы сверху и снизу (вертикальные отступы) */
+}
+
+.em__square {
+    width: 500px;
+    height: 500px;
+    background-color: #333;
+}
+
+.parent-square {
+    width: 400px;
+    height: 400px;
+    background-color: cadetblue;
+}
+
+.parent-square__child {
+    background-color: antiquewhite;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 0%; /* по высоте */
+    left: 0%; /* по ширине */
+    margin-top: 0%;
+    padding-top: 0%; 
+    transform: translatey(0%) translateX(0%);
+    color: #000;
+    font-size: 200%;
+    line-height: 200%;
+}
+
+.vhw__square {
+
+}
+
+.em {
+    font-size: 16px;
+}
+
+.em__bigText1 {
+    /* (20px * 1.5) */
+    font-size: 1.5em;
+}
+
+.em__square {
+    width: 1em; /*рачитывается от font-size html блока */
+    height: 1em;
+}
+
+.em2 {
+    font-size: 16px;
+}
+.em2__child {
+    font-size: 1.5em;
+}
+
+.em2__bigText1 {
+    font-size: 1.5em;
+}
+
+.em3 {
+    font-size: 1.1em;
+}
+
+html {
+    font-size: 16px;
+}
+
+.rem {
+    font-size: 1.5rem;
+}
+
+/*  % ширины */
+/*  % высоты */
+/*  % позишина */
+/*  % марджинов и паддингов */
+/*  % транслейта */
+/*  % фонтсайза и лайнхата */
+
+.procent {
+    font-size: 120%;
+}
+
+.vhw {
+
+}
+
+.vhw__bigText1 {
+    font-size: 3vw; /* отзывается при изменении ширины */
+}
+
+.vhw__bigText2 {
+    font-size: 3vh; /* отзывается при изменении высоты */
+
+}
+
+.vhw__square {
+    width: 100vw;
+    height: 40vh;
+    background-color: cornflowerblue;
+}
+
+.vhwminmax {
+
+}
+
+.vhwminmax__bigText1 {
+    font-size: 3vmin; /* отзывается при изменении ширины */
+}
+
+.vhwminmax__bigText2 {
+    font-size: 3vmax; /* отзывается при изменении высоты */
+
+}
+
+.vhwminmax__square {
+    width: 50vmin;
+    height: 50vmax;
+    background-color: cornflowerblue;
+}

@@ -1,0 +1,54 @@
+.title {
+    color: rgb(119, 173, 220); /* Цвет текста */
+    font-family: Arial, Helvetica, sans-serif; /* Шрифт текста */
+    font-size: 24px; /* Размер шрифта */
+    line-height: 35px; /* Высота строки (расстояние между базовыми линиями строк) */
+    font-weight: bold; /* Насыщенность шрифта (жирный) */
+}
+
+.text {
+    color: rgb(119, 173, 220); /* Цвет текста */
+    font-family: Arial, Helvetica, sans-serif; /* Шрифт текста */
+    font-size: 18px; /* Размер шрифта */
+    line-height: 22px; /* Высота строки */
+    font-style: normal; /* Стиль шрифта (обычный, не курсив) */
+    text-indent: 50px; /* Отступ первой строки текста */
+}
+
+.line {
+    height: 3px; /* Высота линии */
+    width: 100%; /* Ширина линии (во всю ширину контейнера) */
+    background-color: rgb(172, 141, 84); /* Цвет фона линии */
+    margin: 20px 0; /* Отступы сверху и снизу (вертикальные отступы) */
+}
+
+.text-2 {
+    color: rgb(119, 173, 220); /* Цвет текста */
+    font-family: Arial, Helvetica, sans-serif; /* Шрифт текста */
+    font-size: 18px; /* Размер шрифта */
+    line-height: 22px; /* Высота строки */
+    font-style: normal; /* Стиль шрифта (обычный, не курсив) */
+    text-align: right; /* Выравнивание текста по правому краю */
+    text-decoration: underline wavy burlywood; /* Декоративное подчеркивание текста волнистой линией цвета burlywood */
+    text-shadow: 4px 2px 12px rgb(159, 160, 161); /* Тень текста с горизонтальным смещением 4px, вертикальным 2px, размытием 12px и цветом rgb(159, 160, 161) */
+}
+
+.text-3 {
+    color: rgb(119, 173, 220); /* Цвет текста */
+    font-family: Arial, Helvetica, sans-serif; /* Шрифт текста */
+    font-size: 18px; /* Размер шрифта */
+    line-height: 22px; /* Высота строки */
+    text-align: center; /* Выравнивание текста по центру */
+    text-transform: uppercase; /* Преобразование текста в верхний регистр */
+    text-indent: 50px; /* Отступ первой строки текста */
+    letter-spacing: 3px; /* Расстояние между буквами */
+    word-spacing: 5px; /* Расстояние между словами */
+}
+
+.text-4 {
+    color: rgb(119, 173, 220); /* Цвет текста */
+    font-family: Arial, Helvetica, sans-serif; /* Шрифт текста */
+    font-size: 18px; /* Размер шрифта */
+    line-height: 22px; /* Высота строки */
+    white-space: nowrap; /* Запрет переноса текста на новую строку */
+}
