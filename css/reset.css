@@ -49,13 +49,13 @@ button::-moz-focus-inner {
     padding: 0;
     border: 0;
 }
-a,
+/* a,
 a:visited {
     text-decoration: none;
 }
 a:hover {
     text-decoration: none;
-}
+} */
 ul li {
     list-style: none;
 }
@@ -71,6 +71,6 @@ h6 {
     font-size: inherit;
     font-weight: inherit;
 }
-a {
+/* a {
     color: inherit;
-}
+} */
