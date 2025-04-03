@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="tab-icon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/transition.css">
+  <title>transition</title>
+</head>
+
+<body>
+    <header id="header"></header>
+    <main>
+        <div class="container">
+            <div class="button">
+            transition
+            </div>
+        </div>
+        <div class="container">
+            <div class="transition">
+            <div class="block red"></div>
+            <div class="block blue"></div>
+            <div class="block orange"></div>
+            <div class="block purple"></div>
+            </div>
+        </div>
+        <h1>Что такое transition?</h1>
+        <p><strong>Transition</strong> (переводится с английского как "переход") — это CSS-свойство, которое позволяет создавать плавные анимации между двумя состояниями элемента. Например, когда вы меняете цвет фона кнопки при наведении курсора, свойство <code>transition</code> делает этот процесс плавным, а не мгновенным.</p>
+    
+        <h2>Как работает transition?</h2>
+        <p>CSS-свойство <code>transition</code> объединяет несколько подсвойств, которые управляют тем, как и какие изменения будут анимированы. Вот основные компоненты:</p>
+    
+        <h3>transition-property</h3>
+        <p>Указывает, какие свойства элемента будут анимироваться. Например:</p>
+        <ul>
+            <li><code>background-color</code>: Анимируется изменение цвета фона.</li>
+            <li><code>border-radius</code>: Анимируется изменение радиуса скругления углов.</li>
+            <li><code>all</code>: Все изменяемые свойства анимируются.</li>
+        </ul>
+    
+        <h3>transition-duration</h3>
+        <p>Определяет, сколько времени будет длиться анимация. Например:</p>
+        <ul>
+            <li><code>2s</code>: Анимация длится 2 секунды.</li>
+            <li><code>500ms</code>: Анимация длится полсекунды.</li>
+        </ul>
+    
+        <h3>transition-timing-function</h3>
+        <p>Управляет тем, как изменяется скорость анимации во времени. Например:</p>
+        <ul>
+            <li><code>ease</code>: Начинается медленно, ускоряется и снова замедляется в конце (стандартное значение).</li>
+            <li><code>linear</code>: Скорость постоянна на протяжении всей анимации.</li>
+            <li><code>ease-in</code>: Начинается медленно, затем ускоряется.</li>
+            <li><code>ease-out</code>: Начинается быстро, затем замедляется.</li>
+            <li><code>cubic-bezier()</code>: Позволяет создать пользовательскую кривую анимации.</li>
+        </ul>
+    
+        <h3>transition-delay</h3>
+        <p>Задает задержку перед началом анимации. Например:</p>
+        <ul>
+            <li><code>1s</code>: Анимация начнется через 1 секунду после смены состояния.</li>
+        </ul>
+    </main>
+    <footer id="footer"></footer>
+    <script src="js/pageComponents.js"></script>     
+</body>
+
+</html>
