@@ -1,0 +1,32 @@
+.wrapper {
+    padding: 100px 100px 30vh;
+    height: 100vh;
+}
+
+.block {
+    height: 100%;
+    box-shadow: 0 0 10px rgb(83, 83, 83);
+    border-radius: 5px;
+}
+
+/* ------------------------------- */
+
+.block {
+    background: rgb(148, 201, 178);
+    /* background: linear-gradient(#cd8787, #ffff); */
+    /* background: linear-gradient(165deg, #cd8787,  #ffff); */
+    /* background: linear-gradient(#cd8787, #ffff 20%, #cd8787 70%);  */
+    /* background: radial-gradient(#cd8787, #ffff); */
+    background: url("/media/dog.jpg") 50% center  / auto no-repeat, url("/media/laptop.jpg") right center  / auto 300px no-repeat, #333;
+    /* background-repeat: repeat-y ; */
+    /* background-repeat: repeat-x ; */
+    /* background-repeat: repeat; */
+    /* background-repeat: no-repeat ; */
+    /* background-repeat: round; */
+    /* background-repeat: space ; */
+    /* background-position: x y; */
+    /* background-attachment: fixed; */
+    /* background-attachment: scroll;
+    overflow: auto; */
+    /* background-size: auto; */
+}
