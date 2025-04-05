@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Демонстрация селекторов CSS</title>
+        <link rel="stylesheet" href="/css/stylesDeepseek.css" />
+    </head>
+    <body>
+        <header id="header"></header>
+        <main>
+            <h1>Демонстрация селекторов CSS</h1>
+
+            <section>
+                <h2>1. Универсальный селектор (*)</h2>
+                <p><strong>Определение:</strong> Универсальный селектор <code>*</code> выбирает все элементы на странице.</p>
+                <p>В CSS мы убрали все внешние и внутренние отступы, а также задали <code>box-sizing: border-box</code> для всех элементов.</p>
+                <div>Пример текста внутри div. Обратите внимание, что у этого элемента нет отступов.</div>
+            </section>
+
+            <section>
+                <h2>2. Селектор по тегу (div)</h2>
+                <p><strong>Определение:</strong> Селектор по тегу выбирает все элементы с указанным тегом, например, <code>div</code>.</p>
+                <p>В CSS мы добавили зеленую рамку и внутренний отступ.</p>
+                <div>Это div с зеленой рамкой.</div>
+                <span>Это span без рамки.</span>
+            </section>
+
+            <section>
+                <h2>3. Селектор по классу (.class)</h2>
+                <p><strong>Определение:</strong> Селектор по классу выбирает все элементы с указанным классом, например, <code>.example-class</code>.</p>
+                <p>В CSS мы задали светло-серый фон.</p>
+                <div class="example-class">Это div с классом example-class.</div>
+                <div>Это div без класса.</div>
+            </section>
+
+            <section>
+                <h2>4. Селектор по ID (#id)</h2>
+                <p><strong>Определение:</strong> Селектор по ID выбирает элемент с уникальным идентификатором, например, <code>#unique-element</code>.</p>
+                <p>В CSS мы задали светло-зеленый фон.</p>
+                <div id="unique-element">Это div с ID unique-element.</div>
+            </section>
+
+            <section>
+                <h2>5. Дочерний комбинатор (селектор1 > селектор2)</h2>
+                <p>
+                    <strong>Определение:</strong> Дочерний комбинатор выбирает элементы, которые являются прямыми потомками другого элемента. Например, <code>.parent > div</code> выберет только те
+                    <code>div</code>, которые находятся непосредственно внутри <code>.parent</code>.
+                </p>
+                <p>В CSS мы задали розовый фон для дочерних <code>div</code> внутри <code>.parent</code>.</p>
+                <div class="parent">
+                    <div>Это дочерний div с розовым фоном.</div>
+                    <span>Это дочерний span без изменений.</span>
+                </div>
+            </section>
+
+            <section>
+                <h2>6. Селектор потомков (селектор1 селектор2)</h2>
+                <p>
+                    <strong>Определение:</strong> Селектор потомков выбирает элементы, которые являются потомками другого элемента, независимо от уровня вложенности. Например,
+                    <code>.ancestor div</code> выберет все <code>div</code> внутри <code>.ancestor</code>.
+                </p>
+                <p>В CSS мы задали голубой фон для всех <code>div</code> внутри <code>.ancestor</code>.</p>
+                <div class="ancestor">
+                    <div>Это потомок div с голубым фоном.</div>
+                    <span>Это потомок span без изменений.</span>
+                </div>
+            </section>
+
+            <section>
+                <h2>7. Соседний комбинатор (селектор1 + селектор2)</h2>
+                <p>
+                    <strong>Определение:</strong> Соседний комбинатор выбирает элемент, который находится непосредственно после другого элемента. Например, <code>.sibling + div</code> выберет первый
+                    <code>div</code>, следующий сразу после <code>.sibling</code>.
+                </p>
+                <p>В CSS мы задали желтый фон для <code>div</code>, следующего сразу после <code>.sibling</code>.</p>
+                <div class="sibling">Это первый div.</div>
+                <div>Это второй div с желтым фоном.</div>
+            </section>
+
+            <section>
+                <h2>8. Общий комбинатор (селектор1 ~ селектор2)</h2>
+                <p>
+                    <strong>Определение:</strong> Общий комбинатор выбирает все элементы, которые находятся после другого элемента. Например, <code>.general-sibling ~ div</code> выберет все
+                    <code>div</code>, следующие после <code>.general-sibling</code>.
+                </p>
+                <p>В CSS мы задали светло-голубой фон для всех <code>div</code>, следующих после <code>.general-sibling</code>.</p>
+                <div class="general-sibling">Это первый div.</div>
+                <div>Это второй div с светло-голубым фоном.</div>
+                <div>Это третий div с светло-голубым фоном.</div>
+            </section>
+
+            <section>
+                <h2>9. Псевдо-класс :hover</h2>
+                <p><strong>Определение:</strong> Псевдо-класс <code>:hover</code> применяется к элементу, когда на него наводится курсор мыши.</p>
+                <p>В CSS мы задали оранжевый фон при наведении.</p>
+                <div class="hover-example">Наведи на меня курсор.</div>
+            </section>
+
+            <section>
+                <h2>10. Псевдо-класс :nth-child(n)</h2>
+                <p>
+                    <strong>Определение:</strong> Псевдо-класс <code>:nth-child(n)</code> выбирает элемент, который является n-ным потомком своего родителя. Например,
+                    <code>li:nth-child(2)</code> выберет второй элемент списка.
+                </p>
+                <p>В CSS мы задали зеленый фон для второго элемента списка.</p>
+                <ul>
+                    <li>Первый элемент</li>
+                    <li>Второй элемент с зеленым фоном</li>
+                    <li>Третий элемент</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>11. Псевдо-класс :first-child</h2>
+                <p><strong>Определение:</strong> Псевдо-класс <code>:first-child</code> выбирает первый дочерний элемент своего родителя.</p>
+                <p>В CSS мы задали красный фон для первого элемента списка.</p>
+                <ul>
+                    <li>Первый элемент с красным фоном</li>
+                    <li>Второй элемент</li>
+                    <li>Третий элемент</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>12. Псевдо-класс :last-child</h2>
+                <p><strong>Определение:</strong> Псевдо-класс <code>:last-child</code> выбирает последний дочерний элемент своего родителя.</p>
+                <p>В CSS мы задали синий фон для последнего элемента списка.</p>
+                <ul>
+                    <li>Первый элемент</li>
+                    <li>Второй элемент</li>
+                    <li>Последний элемент с синим фоном</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>13. Псевдо-класс :not(селектор)</h2>
+                <p>
+                    <strong>Определение:</strong> Псевдо-класс <code>:not(селектор)</code> выбирает все элементы, которые не соответствуют указанному селектору. Например,
+                    <code>div:not(.not-example)</code> выберет все <code>div</code>, кроме тех, у которых есть класс <code>.not-example</code>.
+                </p>
+                <p>В CSS мы задали розовый фон для всех <code>div</code>, кроме тех, у которых есть класс <code>.not-example</code>.</p>
+                <div class="not-example">Это div с классом.</div>
+                <div>Это div без класса с розовым фоном.</div>
+            </section>
+
+            <section>
+                <h2>14. Псевдо-элемент ::before</h2>
+                <p><strong>Определение:</strong> Псевдо-элемент <code>::before</code> добавляет контент перед содержимым элемента.</p>
+                <p>В CSS мы добавили текст "Перед текстом: " перед содержимым.</p>
+                <div class="before-example">Этот текст имеет контент перед собой.</div>
+            </section>
+
+            <section>
+                <h2>15. Псевдо-элемент ::after</h2>
+                <p><strong>Определение:</strong> Псевдо-элемент <code>::after</code> добавляет контент после содержимого элемента.</p>
+                <p>В CSS мы добавили текст " :После текста" после содержимого.</p>
+                <div class="after-example">Этот текст имеет контент после себя.</div>
+            </section>
+        </main>
+        <footer id="footer"></footer>
+        <script src="/js/pageComponents.js"></script>
+    </body>
+</html>
