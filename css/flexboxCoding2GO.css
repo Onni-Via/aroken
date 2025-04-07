@@ -1,0 +1,50 @@
+.conteiner {
+    min-height: 400px;
+    display: flex;
+    border: 4px solid black;
+    gap: 20px;
+
+    /* Выравнивание по оси Х (горизонталь) */
+    /* justify-content: flex-start;  */
+    /* Выравнивание по оси У (вертикаль) */
+    /* align-items: center; 
+
+    flex-direction: column; */
+    /* перенос элементов на следующую строку */
+    /* flex-wrap: wrap; */
+
+    /* justify-content: center;
+    align-items: center; */
+    /* Выравнивание всего контента */
+    /* align-content: center; */
+
+    /* Задает размер промежутков между элементами */
+    /* gap: 20px;
+    column-gap: 10px;
+    row-gap: 30px; */
+
+}
+.box {
+    /* Элементы растягиваются на всю ширину родителя */
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 100px;
+    display: flex;
+    height: 100px;
+    width: 100px;
+    background-color: #1275e7;
+    font-size: 20pt;
+    min-width: 0; /* Разрешает сжатие элемента до нуля по ширине */
+    min-height: 0; /* Разрешает сжатие элемента до нуля по высоте */
+    justify-content: center;
+    align-items: center;
+}
+
+@media(max-width: 300px) {
+    .conteiner {flex-wrap: wrap;}
+}
+
+#image {
+    /* Запрещает сжатие, предотвращает искажение элементов */
+    flex-shrink: 0;
+}
