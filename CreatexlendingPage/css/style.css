@@ -1,0 +1,114 @@
+html, body {
+    font-size: 16px;
+    font-family: Lato, sans-serif;
+}
+
+.wrapper {
+    min-height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.container {
+    /* 1260px это 65% от эрана 24 дюйма в fullhd */
+    max-width: 65.625vw; 
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+ /* ------------------------------------ */
+
+.header {
+}
+
+.header__top {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    align-items: center;
+}
+.container {
+
+}
+.header__logo {
+    margin-right: 60px;
+}
+.logo {
+}
+.header__nav {
+    margin-right: auto;
+}
+.header__nav-list {
+    display: flex;
+    margin-right: auto;
+}
+.header__nav-item {
+    margin-right: 40px;
+
+}
+
+.header__nav-item:last-child{
+    margin-right: 0;
+
+} 
+.header__nav-link {
+    font-weight: 700;
+    line-height: 1.6;
+    color: #424551;
+    white-space: nowrap;
+    transition: all .3s;
+}
+
+.header__nav-link:hover {
+    color: #FF3F3A;
+}
+
+.header__btn-box {
+    display: flex;
+    align-items: center;
+}
+.header__top-btn {
+    margin-right: 36px;
+}
+.button {
+    font-weight: 700;
+    line-height: 52px;
+    letter-spacing: 0.5px;
+    padding: 0px 40px 0px 40px;
+    color: #FFFFFF;
+    border-radius: 4px;
+    background: linear-gradient(45.00deg, rgb(255, 63, 58),rgb(247, 94, 5) 100%);
+    white-space: nowrap;
+    transition: .3s;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+.header__user-nav {
+    position: relative;
+    padding-left: 48px;
+}
+
+.header__user-nav img {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    display: block;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    
+}
+.header__user-btn {
+    white-space: nowrap;
+    line-height: 1.6;
+    transition: all .3s;
+}
+
+.header__user-btn:hover {
+    color:#FF3F3A;
+}
+
+.header__body {
+}
